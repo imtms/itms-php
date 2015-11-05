@@ -3,6 +3,7 @@ FROM php:7-fpm
 ADD php.ini    /usr/local/etc/php/php.ini
 ADD php-fpm.conf    /usr/local/etc/php-fpm.conf
 
+RUN mkdir /usr/local/php/var
 RUN mkdir /usr/local/php/var/log
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
