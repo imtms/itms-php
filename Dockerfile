@@ -6,7 +6,7 @@ ADD php-fpm.conf    /usr/local/etc/php-fpm.conf
 COPY redis.tgz /home/redis.tgz
 RUN docker-php-ext-install gd \
     && docker-php-ext-install pdo_mysql \
-    && pecl install /home/redis.tgz && echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini
+    && pecl install /home/redis.tgz && echo "extension=redis.so" > /usr/local/etc/php/php.ini
 ADD composer.phar /usr/local/bin/composer
 RUN chmod 755 /usr/local/bin/composer
 
