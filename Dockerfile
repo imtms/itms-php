@@ -3,7 +3,6 @@ FROM php:7-fpm
 ADD php.ini    /usr/local/etc/php/php.ini
 ADD php-fpm.conf    /usr/local/etc/php-fpm.conf
 
-COPY redis.tgz /home/redis.tgz
 RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
