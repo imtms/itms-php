@@ -1,8 +1,5 @@
 FROM php:7-fpm
 
-ADD php.ini    /usr/local/etc/php/php.ini
-ADD php-fpm.conf    /usr/local/etc/php-fpm.conf
-
 RUN mkdir /usr/local/php/var
 RUN mkdir /usr/local/php/var/log
 RUN apt-get update && apt-get install -y \
@@ -16,4 +13,5 @@ RUN docker-php-ext-install pdo_mysql
 ADD composer.phar /usr/local/bin/composer
 RUN chmod 755 /usr/local/bin/composer
 
+VOLUME ["/usr/local/etc"]
 VOLUME ["/opt"]
