@@ -13,5 +13,6 @@ RUN docker-php-ext-install pdo_mysql
 ADD composer.phar /usr/local/bin/composer
 RUN chmod 755 /usr/local/bin/composer
 
-VOLUME ["/usr/local/etc"]
 VOLUME ["/opt"]
+
+CMD ["php-fpm"]
