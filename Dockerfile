@@ -35,6 +35,8 @@ RUN if [ ${INSTALL_IMAGEMAGICK} = true ]; then \
     docker-php-ext-enable imagick \
 ;fi
 
+COPY config/php.ini $PHP_INI_DIR/conf.d/
+
 VOLUME ["/opt"]
 
 CMD ["php-fpm"]
