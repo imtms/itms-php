@@ -13,7 +13,6 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install iconv \
     && docker-php-ext-install gd
 RUN docker-php-ext-install pdo_mysql
-ADD composer.phar /usr/local/bin/composer
 RUN chmod 755 /usr/local/bin/composer
 
 
